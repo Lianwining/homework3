@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 
-API_KEY = os.environ.get("AI_API_KEY", "")
+API_KEY = st.secrets.get("AI_API_KEY", "") or os.environ.get("AI_API_KEY", "")
 
 st.set_page_config(page_title="聊天机器人")
 st.title("🤖 简易聊天机器人 (DeepSeek)")
